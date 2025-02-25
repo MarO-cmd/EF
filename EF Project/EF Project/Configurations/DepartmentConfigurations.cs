@@ -17,11 +17,12 @@ namespace EF_Project.Configurations
 
             builder.HasKey(D => D.Id);
 
-            // Instructor FK
-            builder.HasOne(D => D.Instructor)
-                    .WithOne(I => I.Department)
-                    .HasForeignKey<Department>(D => D.Inst_Id);
-                   
+           
+
+            //builder.HasMany(D => D.Instructors)
+            //       .WithOne(I => I.WorkDepartment)
+            //       .HasForeignKey(I => I.WorkDepartmentId);
+
 
 
             builder.Property(D => D.Id).UseIdentityColumn(1, 1);

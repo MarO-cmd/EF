@@ -14,7 +14,7 @@ namespace EF_Project.Configurations
         public void Configure(EntityTypeBuilder<Student_Course> builder)
         {
 
-            builder.HasKey(SC => new { SC.Course_Id, SC.Std_Id });
+            builder.HasKey(SC => new { SC.CourseId, SC.StudentId});
 
            
         }

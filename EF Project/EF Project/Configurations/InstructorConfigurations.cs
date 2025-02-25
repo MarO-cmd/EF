@@ -17,11 +17,19 @@ namespace EF_Project.Configurations
 
             builder.Property(I => I.Id).UseIdentityColumn(1, 1);
 
+            // one to many contain
+            builder.HasOne(I => I.WorkDepartment)
+                   .WithMany(D => D.Instructors)
+                   .HasForeignKey(I => I.WorkDepartmentId)
+                   .IsRequired(false);
 
-            // Department FK
-            builder.HasOne(I => I.Department)
-                   .WithOne(D => D.Instructor)
-                   .HasForeignKey<Instructor>(I => I.Dept_Id);
+            // one to one mange
+            builder.HasOne(I => I.ManageDepartment)
+                   .WithOne(D => D.Manger)
+                   .HasForeignKey<Department>(D => D.MangerId)
+                   .IsRequired(false);
+
+
 
             builder.Property(I => I.Name).HasMaxLength(50)
                                          .HasColumnType("varchar")

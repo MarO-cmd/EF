@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EF_Project.Entities
 {
-    internal class Student
+    public class Student
     {
         public int Id { get; set; }
         public string FName { get; set; }
@@ -15,9 +15,9 @@ namespace EF_Project.Entities
         public int Age { get; set; }
         public string Adress { get; set; }
 
-        public virtual ICollection<Course> Courses{ get; set; }
+        public virtual ICollection<Student_Course> Courses{ get; set; }
 
-        public int Dept_Id { get; set; }
+        public int? Dept_Id { get; set; }
         public virtual Department Department { get; set; }
 
     }

@@ -21,7 +21,8 @@ namespace EF_Project.Configurations
             // Department FK
             builder.HasOne(S => S.Department)
                    .WithMany(D => D.Students)
-                   .HasForeignKey(S => S.Dept_Id);
+                   .HasForeignKey(S => S.Dept_Id)
+                   .IsRequired(false);
 
             builder.Property(I => I.FName).HasMaxLength(20)
                                          .HasColumnType("varchar")

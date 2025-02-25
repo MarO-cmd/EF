@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace EF_Project.Entities
 {
-    internal class Student_Course
+    public class Student_Course
     {
         public int StudentId { get; set; } // fk
-        public Student Student { get; set; }
+
+        //public Student Student { get; set; } 
 
         public int CourseId { get; set; } // fk
-        public Course Course { get; set; }
+
+        //public Course Course { get; set; }
 
         public decimal Grade { get; set; }
 
